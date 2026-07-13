@@ -272,10 +272,10 @@ amountInWords += " Only";
             51.HAINES ROAD PULAKESHI NAGAR<br />
             FRAZER TOWN BENGALORE<br />
             PIN 580005<br />
-            08043004581<br />
+            
 PHONE 080 43003468<br />
 DL NO KA/B51-163563-KAB51-163564.<br />
-GSTIN: 29ABKFA8232H1Z8<br />
+
 STATE CODE: 29 STATE KARNATАКА <br />
             
           </td>
