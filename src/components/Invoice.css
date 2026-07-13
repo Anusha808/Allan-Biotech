@@ -1,0 +1,187 @@
+/* ===== SCREEN + PRINT BASE ===== */
+#invoice {
+  width: 210mm;                 /* A4 width */
+  margin: auto;
+  border-collapse: collapse;
+  font-family: "Times New Roman", serif;
+  font-size: 14px;
+  table-layout: fixed;          /* 🔑 REQUIRED for column control */
+}
+
+/* ===== TABLE CELLS ===== */
+#invoice th,
+#invoice td {
+  border: 1px solid #000;
+  padding: 4px;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+#invoice th {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ===== COLUMN WIDTH CONTROL ===== */
+
+/* MFG */
+#invoice th:nth-child(1),
+#invoice td:nth-child(1) {
+  width: 60px;
+}
+
+/* PRODUCT NAME (WIDER) */
+#invoice th:nth-child(2),
+#invoice td:nth-child(2) {
+  width: 240px;
+}
+
+/* BATCH NO */
+#invoice th:nth-child(3),
+#invoice td:nth-child(3) {
+  width: 80px;
+}
+
+/* HSN (NEW COLUMN – SMALL) */
+#invoice th:nth-child(4),
+#invoice td:nth-child(4) {
+  width: 70px;
+  text-align: center;
+}
+
+/* EXP DATE */
+#invoice th:nth-child(5),
+#invoice td:nth-child(5) {
+  width: 80px;
+}
+
+/* QTY */
+#invoice th:nth-child(6),
+#invoice td:nth-child(6) {
+  width: 50px;
+  text-align: center;
+}
+
+/* TRP */
+#invoice th:nth-child(7),
+#invoice td:nth-child(7) {
+  width: 70px;
+  text-align: center;
+}
+
+/* 🔴 MRP – REDUCED WIDTH */
+#invoice th:nth-child(8),
+#invoice td:nth-child(8) {
+  width: 55px;                 /* 👈 reduce/increase here */
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* GST */
+#invoice th:nth-child(9),
+#invoice td:nth-child(9) {
+  width: 55px;
+  text-align: center;
+}
+
+/* GROSS VALUE */
+#invoice th:nth-child(10),
+#invoice td:nth-child(10) {
+  width: 90px;
+  text-align: center;
+}
+/* 🔒 FIX reverse typing in contentEditable cells */
+#invoice td[contenteditable="true"] {
+  direction: ltr;              /* prevents 35 → 53 */
+  unicode-bidi: plaintext;     /* stops auto reordering */
+  text-align: LEFT;           /* good for numbers */
+}
+
+/* ===== BUTTONS ===== */
+button {
+  margin: 10px 5px;
+  padding: 6px 12px;
+}
+
+/* ===== PRINT SETTINGS ===== */
+@page {
+  size: A4;
+  margin: 10mm;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  button {
+    display: none;
+  }
+
+  #invoice {
+    width: 100%;
+    page-break-inside: avoid;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+}
+
+/* ===== OPTIONAL ===== */
+.no-print {
+  display: none !important;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media screen and (max-width: 768px) {
+
+  #invoice {
+    width: 100%;
+    min-width: 900px; /* keeps table structure */
+    font-size: 12px;
+  }
+
+  /* Horizontal scroll on mobile */
+  .invoice-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #invoice th,
+  #invoice td {
+    padding: 3px;
+    font-size: 11px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #invoice {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  #invoice th,
+  #invoice td {
+    padding: 2px;
+  }
+
+  /* Reduce column widths */
+  #invoice th:nth-child(2),
+  #invoice td:nth-child(2) {
+    width: 150px;
+  }
+
+  #invoice th:nth-child(10),
+  #invoice td:nth-child(10) {
+    width: 70px;
+  }
+}
