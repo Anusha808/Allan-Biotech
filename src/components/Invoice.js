@@ -451,7 +451,7 @@ STATE CODE: 29 STATE KARNATАКА <br />
         </tr>
 
         <tr>
-          <td colSpan="10"><b>FOR : BRAHMI AGENCY</b></td>
+          <td colSpan="10"><b>FOR : ALLAN BIOTECH</b></td>
         </tr>
       </table>
     </div>
