@@ -444,11 +444,7 @@ STATE CODE: 29 STATE KARNATАКА <br />
 </tr>
 
 
-        <tr>
-          <td colSpan="10">
-            A/C.306221010000013 UNION BANK IFS CODE UBIN0930628 DWD
-          </td>
-        </tr>
+        
 
         <tr>
           <td colSpan="10"><b>FOR : ALLAN BIOTECH</b></td>
